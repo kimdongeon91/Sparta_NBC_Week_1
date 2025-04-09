@@ -46,4 +46,26 @@ public class card : MonoBehaviour
             GameManager.instance.Matched();
         }
     }
+
+    public void InvokeDestroyCard()
+    {
+        Invoke("DestroyCard", 0.3f);
+    }
+
+    public void DestroyCard()
+    {
+        Destroy(gameObject);
+    }
+
+    public void InvokeCloseCard()
+    {
+        Invoke("CloseCard", 0.5f);
+    }
+
+    public void CloseCard()
+    {
+        Anim.SetBool("isOpen", false);
+        Front.SetActive(false);
+        Back.SetActive(true);
+    }
 }

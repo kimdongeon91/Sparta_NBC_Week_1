@@ -46,11 +46,16 @@ public class GameManager : MonoBehaviour
     {
         if (firstCard.idx == secondCard.idx)
         {
-
+            firstCard.InvokeDestroyCard();
+            secondCard.InvokeDestroyCard();
         }
         else
         {
-
+            firstCard.InvokeCloseCard();
+            secondCard.InvokeCloseCard();
         }
+
+        firstCard = null;
+        secondCard = null;
     }
 }
