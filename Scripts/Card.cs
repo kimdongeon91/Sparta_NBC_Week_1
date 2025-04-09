@@ -6,6 +6,11 @@ public class card : MonoBehaviour
 {
     int idx = 0;
 
+    public GameObject Front;
+    public GameObject Back;
+
+    public Animator Anim;
+
     public SpriteRenderer frontImage;
 
     // Start is called before the first frame update
@@ -28,6 +33,8 @@ public class card : MonoBehaviour
 
     public void OpenCard()
     {
-
+        Anim.SetBool("isOpen", true);
+        Front.SetActive(true);
+        Back.SetActive(false);
     }
 }
