@@ -6,6 +6,8 @@ public class card : MonoBehaviour
 {
     int idx = 0;
 
+    public SpriteRenderer front;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +23,6 @@ public class card : MonoBehaviour
     public void setting(int number)
     {
         idx = number;
+        front.sprite = Resources.Load<Sprite>($"rtan{idx}");
     }
 }
