@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public card firstCard;
+    public card secondCard;
+
     public Text timeTxt;
 
     float time = 30.0f;
@@ -36,6 +39,18 @@ public class GameManager : MonoBehaviour
         else
         {
             Time.timeScale = 1.0f;
+        }
+    }
+
+    public void Matched()
+    {
+        if (firstCard.idx == secondCard.idx)
+        {
+
+        }
+        else
+        {
+
         }
     }
 }
