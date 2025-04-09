@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class card : MonoBehaviour
 {
-    int idx = 0;
+    public int idx = 0;
 
     public GameObject Front;
     public GameObject Back;
@@ -36,5 +36,14 @@ public class card : MonoBehaviour
         Anim.SetBool("isOpen", true);
         Front.SetActive(true);
         Back.SetActive(false);
+        if (GameManager.instance.firstCard == null)
+        {
+            GameManager.instance.firstCard = this;
+        }
+        else
+        {
+            GameManager.instance.secondCard = this;
+            GameManager.instance.Matched();
+        }
     }
 }
